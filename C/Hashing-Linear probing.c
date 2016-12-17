@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 50
+#define MAX 10
 enum type_of_record {EMPTY,DELETED,OCCUPIED};
 struct employee{
     int empid;
@@ -69,7 +69,7 @@ void insert(struct employee emprec,struct Record table[]){
     int key=emprec.empid;
     h=hash(key);
     location=h;
-    for(i=0;i<MAX;i++){
+    for(i=1;i<=MAX;i++){
         if(table[location].status==EMPTY || table[location].status==DELETED){
             table[location].info=emprec;
             table[location].status=OCCUPIED;
@@ -108,7 +108,7 @@ int search(int key,struct Record table[]){
     int i,h,location;
     h=hash(key);
     location=h;
-    for(i=1;i!=MAX-1;i++){
+    for(i=1;i<=MAX;i++){
         if(table[location].status==EMPTY)
             return -1;
         if(table[location].info.empid==key && table[location].status==OCCUPIED)
