@@ -4,7 +4,6 @@
  * @sajal.agrawal1997@gmail.com
  */
 
-
 import java.util.*;
 
 public class MySubString {
@@ -14,13 +13,15 @@ public class MySubString {
 			s1=s2;
 			s2=temp;
 		}
-		int j=0,i;
+		int j=0,i,index;
 		for(i=0;i<=s1.length()-s2.length();i++){
-			while(j<=s2.length()-1 && s1.charAt(i)==s2.charAt(j)){
+			index=i;
+			while(j<=s2.length()-1 && s1.charAt(index)==s2.charAt(j)){
 				j++;
-				i++;
+				index++;
 			}
 			if(j==s2.length())return true;
+			j=0;
 		}
 		return false;
 	}
@@ -35,3 +36,4 @@ public class MySubString {
 		System.out.println(mySubS(s1,s2));
 	}
 }
+
