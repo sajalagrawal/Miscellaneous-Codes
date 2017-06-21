@@ -6,7 +6,7 @@ using namespace std;
 vector<ll> v[100005];
 vector<ll> visited(100005);
 vector<ll> height(100005);
-void dfs(ll root){
+void bfs(ll root){
     queue<ll> q;
     q.push(root);
     visited[root]=1;
