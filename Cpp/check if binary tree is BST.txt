@@ -1,0 +1,19 @@
+//inorder
+bool solve(Node *r){
+    if(r!=NULL){
+        
+        if(solve(r->left)==false)return false;
+        ///cout<<"r->data"<<r->data<<" prev="<<previous<<endl;
+        if((r->data)<previous){
+            //cout<<r->data<<endl;
+            return false;
+        }
+        else{
+            previous=r->data;
+            //cout<<"prev="<<previous<<endl;
+            
+        }
+        if(solve(r->right)==false)return false;
+    }
+    return true;
+}
