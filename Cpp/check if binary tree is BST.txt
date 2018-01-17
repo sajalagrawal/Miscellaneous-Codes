@@ -1,4 +1,4 @@
-//inorder
+//concept of inorder traversal
 bool solve(Node *r){
     if(r!=NULL){
         
