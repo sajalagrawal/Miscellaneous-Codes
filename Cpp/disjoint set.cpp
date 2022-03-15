@@ -29,6 +29,7 @@ public:
             //adding this edge creates a cycle;
             return false;
         }
+		//should check by rank[parent]
         if(rank[nodeA] > rank[nodeB]){
             parent[parentB] = parentA;
             rank[parentA]++;
